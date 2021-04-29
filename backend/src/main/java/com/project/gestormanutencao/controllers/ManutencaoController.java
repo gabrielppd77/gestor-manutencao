@@ -43,6 +43,12 @@ public class ManutencaoController {
         return ResponseEntity.ok().body(manutencao);
     }
 
+    @GetMapping(value = "/concluidas/details/{id}")
+    public ResponseEntity<ManutencaoDTO> findConcludeById(@PathVariable Long id){
+        ManutencaoDTO manutencao = service.findById(id);
+        return ResponseEntity.ok().body(manutencao);
+    }
+
     @PostMapping(value = "/insert")
     public ResponseEntity<ManutencaoDTO> insert(@RequestBody ManutencaoDTO dto){
         ManutencaoDTO manutencao = service.insert(dto);

@@ -1,6 +1,4 @@
-import { Manutencao } from '../manutencao.model';
 import { Component, OnInit } from '@angular/core';
-import { ManutencaoService } from '../manutencao.service';
 
 @Component({
   selector: 'app-manutencoes-read',
@@ -9,22 +7,8 @@ import { ManutencaoService } from '../manutencao.service';
 })
 export class ManutencoesReadComponent implements OnInit {
 
-  manutencoes: Manutencao[] = []
-
-  displayedColumns: string[] = ['placa', 'descricao', 'data_previsao'];
-
-  constructor(private service: ManutencaoService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.findAll();
   }
-
-  findAll() {
-    this.service.findAll().subscribe(resposta => {
-      console.log(resposta);
-      this.manutencoes = resposta;
-    })
-  }
-
-  
 }

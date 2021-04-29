@@ -1,0 +1,13 @@
+<div class="content">
+    <h1>Fazendo</h1>
+    <mat-list *ngFor="let item of manutencoes">
+        <div *ngIf="item.status === 'FAZENDO'">
+            <mat-card>
+                <mat-card-title> {{ item.veiculo.placa }} </mat-card-title>
+                <mat-card-subtitle> {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
+                <mat-card-subtitle> {{ item.status }} </mat-card-subtitle>
+                <mat-card-content> {{ item.descricao }} </mat-card-content>
+            </mat-card> 
+        </div>
+    </mat-list>
+</div>

@@ -13,8 +13,9 @@ import { NavComponent } from './components/template/nav/nav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 import { ManutencoesReadComponent } from './components/views/manutencoes/manutencoes-read/manutencoes-read.component';
-import {MatTableModule} from '@angular/material/table';
+import { ManutencoesReadAllComponent } from './components/views/manutencoes/manutencoes-read-all/manutencoes-read-all.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatTableModule} from '@angular/material/table';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    ManutencoesReadComponent
+    ManutencoesReadComponent,
+    ManutencoesReadAllComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTableModule,
+    MatCardModule,
     HttpClientModule
   ],
   providers: [],

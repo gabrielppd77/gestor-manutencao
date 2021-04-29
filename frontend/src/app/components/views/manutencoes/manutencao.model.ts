@@ -5,18 +5,18 @@ import { Veiculo } from '../veiculos/veiculo.model';
 export interface Manutencao {
     id?: String;
     descricao: String;
-    kmManutencao: String;
+    km_manutencao: String;
 
-    dataCriacao: String;
-    dataFinalizacao: String;
-    dataPrevisao: String;
+    data_criacao: String;
+    data_finalizacao: String;
+    data_previsao: String;
 
     veiculo: Veiculo;
 
-    condicaoPagamento: String;
-    valorPecas: String;
-    valorServico: String;
+    condicao_pagamento: String;
+    valor_pecas: String;
+    valor_servico: String;
     
-    prioridade: Prioridade;
-    status: Status;
+    prioridade: String;
+    status: String;
 } 

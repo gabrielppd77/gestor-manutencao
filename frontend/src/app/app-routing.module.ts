@@ -1,3 +1,4 @@
+import { ManutencoesReadAllComponent } from './components/views/manutencoes/manutencoes-read-all/manutencoes-read-all.component';
 import { ManutencoesReadComponent } from './components/views/manutencoes/manutencoes-read/manutencoes-read.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -5,11 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: ManutencoesReadComponent
+    component: ManutencoesReadAllComponent
   },
   {
     path: 'manutencoes',
-    component: ManutencoesReadComponent
+    component: ManutencoesReadAllComponent
   },
   {
     path: 'manutencoes/concluidas',
