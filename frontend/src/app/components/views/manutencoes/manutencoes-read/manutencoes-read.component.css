@@ -1,0 +1,19 @@
+.content {
+    width: 95%;
+    margin: .8rem auto;
+    text-align: center;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.title_column{
+    text-align: center;
+}
+
+h1 {
+    padding-top: 1rem;
+    margin-bottom: 0%;
+}

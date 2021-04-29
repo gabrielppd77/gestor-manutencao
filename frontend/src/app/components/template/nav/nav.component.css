@@ -1,0 +1,19 @@
+.container {
+    height: 86%;
+    background-color: rgb(198, 229, 255);
+}
+
+i {
+    padding-right: .6rem;
+}
+
+.sidenav {
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+}
+
+@media(max-width: 740px) {
+    i {
+        font-size: 0%;
+    }
+}

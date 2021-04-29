@@ -1,0 +1,23 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side" opened autoFocus class="sidenav">
+        <mat-nav-list>
+            <a routerLink="manutencoes" mat-list-item class="item_menu">
+                <i class="material-icons">build</i>
+                Manutenções
+            </a>
+            <a routerLink="manutencoes/concluidas" mat-list-item class="item_menu">
+                <i class="material-icons">done_all</i>
+                Manutenções Concluídas
+            </a>
+            <a routerLink= "veiculos" mat-list-item class="item_menu">
+                <i class="material-icons">directions_car</i>
+                Veículos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

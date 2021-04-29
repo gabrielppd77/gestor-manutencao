@@ -1,0 +1,14 @@
+img {
+    height: 2,5rem;
+    width: 5rem;
+}
+
+.header {
+    height: 8%;
+    background-color: rgb(91, 158, 235);
+}
+
+.title {
+    position: fixed;
+    right: 2%;
+}
