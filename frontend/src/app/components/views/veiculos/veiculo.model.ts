@@ -1,4 +1,3 @@
-import { Tipo } from "../../enums/veiculos-enums/tipo.enum";
 import { Manutencao } from "../manutencoes/manutencao.model";
 
 export interface Veiculo {
@@ -13,5 +12,5 @@ export interface Veiculo {
 
     manutencoes: Manutencao[];
 
-    tipo: Tipo;
+    tipo: String;
 }

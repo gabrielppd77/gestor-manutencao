@@ -1,5 +1,3 @@
-import { Prioridade } from '../../enums/manutencoes-enums/prioridade.enum';
-import { Status } from '../../enums/manutencoes-enums/status.enum';
 import { Veiculo } from '../veiculos/veiculo.model';
 
 export interface Manutencao {

@@ -1,0 +1,27 @@
+<div class="content">
+        <h1 class="title">Detalhes da Manutenção</h1>
+    <div class="details-veiculo">
+        <div class="details-component">Placa {{ manutencao.veiculo.placa }}</div>
+        <div class="details-component">Modelo {{ manutencao.veiculo.modelo }}</div>
+        <div class="details-component">Fabricação {{ manutencao.veiculo.fabricacao }} Ano {{ manutencao.veiculo.ano }}</div>
+        <div class="details-component">Tipo {{ manutencao.veiculo.tipo }}</div>
+        <div class="details-component">Chassi {{ manutencao.veiculo.chassi }}</div>
+        <div class="details-component">Km Atual {{ manutencao.veiculo.km }}</div>
+    </div>
+    <p class="title">Descrição</p>
+    <div class="descricao">
+        {{ manutencao.descricao }}
+    </div>
+    <div class="outros-detalhes">
+        <div class="outros-detalhes-content">Status: {{ manutencao.status }}</div>
+        <div class="outros-detalhes-content">Prioridade: {{ manutencao.prioridade }}</div>
+        <div class="outros-detalhes-content">Data inicio {{ manutencao.data_criacao | date: "dd/MM/yyy"}} </div>
+        <div class="outros-detalhes-content">Previsao {{ manutencao.data_previsao | date: "dd/MM/yyy"}}</div>      
+    </div>
+    <h1 class="title">Orçamento</h1>
+    <div class="orcamento">
+        <div>Valor serviços {{ manutencao.valor_servico }}</div>
+        <div>Valor peças {{ manutencao.valor_pecas }}</div>
+    </div>
+
+</div>

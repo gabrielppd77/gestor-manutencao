@@ -14,7 +14,12 @@ export class ManutencaoService {
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<Manutencao[]> {
-    const url = `${this.baseUrl}/manutencoes`
-    return this.http.get<Manutencao[]>(url)
+    const url = `${this.baseUrl}/manutencoes`;
+    return this.http.get<Manutencao[]>(url);
+  }
+
+  findById(id: String): Observable<Manutencao> {
+    const url = `${this.baseUrl}/manutencoes/details/${id}`;
+    return this.http.get<Manutencao>(url);
   }
 }

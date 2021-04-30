@@ -1,0 +1,42 @@
+.content {
+    background-color: white;
+    margin: 1rem auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+}
+.title {
+    padding-top: .5rem;
+    padding-bottom: 0px;
+    text-align: center;
+}
+.details-veiculo {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    border: 1px solid;
+}
+.descricao {
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    border: 1px solid;
+}
+.details-component {
+    padding-left: 20px;
+}
+
+.outros-detalhes {
+    text-align: center;
+    display: flex;
+}
+.outros-detalhes-content{
+    padding-top: 10px;
+    margin: auto;
+}
+.orcamento{
+    width: 90%;
+    height: 130px;
+    margin: auto;
+    border: 1px solid;
+}

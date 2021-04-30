@@ -1,6 +1,20 @@
 .content {
     width: 97%;
-    width: 95%;
     margin: .8rem auto;
-    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(91, 158, 235);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+mat-card {
+    margin-left: 5px;
+}
+
+mat-list {
+    display: inline-flex;
 }

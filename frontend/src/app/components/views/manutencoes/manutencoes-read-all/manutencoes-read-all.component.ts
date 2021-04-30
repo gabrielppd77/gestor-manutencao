@@ -20,7 +20,6 @@ export class ManutencoesReadAllComponent implements OnInit {
   findAll() {
     this.service.findAll().subscribe(resposta => {
       this.manutencoes = resposta;
-      console.log(this.manutencoes);
     })
   }
 }

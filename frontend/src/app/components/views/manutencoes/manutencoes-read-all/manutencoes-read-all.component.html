@@ -2,10 +2,39 @@
     <h1>Fazendo</h1>
     <mat-list *ngFor="let item of manutencoes">
         <div *ngIf="item.status === 'FAZENDO'">
-            <mat-card>
+            <mat-card routerLink = "details/{{ item.id }}">
                 <mat-card-title> {{ item.veiculo.placa }} </mat-card-title>
-                <mat-card-subtitle> {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
-                <mat-card-subtitle> {{ item.status }} </mat-card-subtitle>
+                <mat-card-subtitle> Previsão {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
+                <mat-card-content> {{ item.descricao }} </mat-card-content>
+            </mat-card> 
+        </div>
+    </mat-list>
+    <h1>A Fazer</h1>
+    <mat-list *ngFor="let item of manutencoes">
+        <div *ngIf="item.status === 'AFAZER'">
+            <mat-card routerLink = "details/{{ item.id }}">
+                <mat-card-title> {{ item.veiculo.placa }} </mat-card-title>
+                <mat-card-subtitle> Previsão {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
+                <mat-card-content> {{ item.descricao }} </mat-card-content>
+            </mat-card> 
+        </div>
+    </mat-list>
+    <h1>Em análise</h1>
+    <mat-list *ngFor="let item of manutencoes">
+        <div *ngIf="item.status === 'ANALISE'">
+            <mat-card routerLink = "details/{{ item.id }}">
+                <mat-card-title> {{ item.veiculo.placa }} </mat-card-title>
+                <mat-card-subtitle> Previsão {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
+                <mat-card-content> {{ item.descricao }} </mat-card-content>
+            </mat-card> 
+        </div>
+    </mat-list>
+    <h1>Aguardando</h1>
+    <mat-list *ngFor="let item of manutencoes">
+        <div *ngIf="item.status === 'AGUARDANDO'">
+            <mat-card routerLink = "details/{{ item.id }}">
+                <mat-card-title> {{ item.veiculo.placa }} </mat-card-title>
+                <mat-card-subtitle> Previsão {{ item.data_previsao  | date:"dd/MM/yyyy"}} </mat-card-subtitle>
                 <mat-card-content> {{ item.descricao }} </mat-card-content>
             </mat-card> 
         </div>

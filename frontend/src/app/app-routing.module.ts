@@ -13,11 +13,11 @@ const routes: Routes = [
     component: ManutencoesReadAllComponent
   },
   {
-    path: 'manutencoes/concluidas',
+    path: 'details/:id',
     component: ManutencoesReadComponent
   },
   {
-    path: 'veiculos',
+    path: 'manutencoes/details/:id',
     component: ManutencoesReadComponent
   }
 ];
