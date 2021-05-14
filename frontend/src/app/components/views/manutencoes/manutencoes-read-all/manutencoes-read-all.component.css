@@ -18,3 +18,15 @@ mat-card {
 mat-list {
     display: inline-flex;
 }
+
+mat-card-title {
+    display: inline-flex;
+    width: 100%;
+}
+
+.prioridadeCard {
+    height: 20px;
+    width: 50px;
+    border-radius: 5px;
+    margin-left: auto;
+}

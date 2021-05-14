@@ -1,16 +1,16 @@
 import { Manutencao } from "../manutencoes/manutencao.model";
 
 export interface Veiculo {
-    id?: String;
-    placa: String;
-    km: String;
+    id?: number;
+    placa: string;
+    km: number;
 
-    modelo: String;
-    fabricacao: String;
-    ano: String;
-    chassi: String;
+    modelo: string;
+    fabricacao: string;
+    ano: number;
+    chassi: string;
 
-    manutencoes: Manutencao[];
+    manutencoes?: Manutencao[];
 
-    tipo: String;
+    tipo: string;
 }

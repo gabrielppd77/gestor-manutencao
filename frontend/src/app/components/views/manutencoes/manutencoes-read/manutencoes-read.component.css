@@ -2,39 +2,60 @@
     background-color: white;
     margin: 1rem auto;
     width: 90%;
-    height: 90%;
     border-radius: 5px;
-}
-.title {
-    padding-top: .5rem;
-    padding-bottom: 0px;
     text-align: center;
 }
+
+.title {
+    padding-top: .5rem;
+}
+
 .details-veiculo {
     width: 90%;
-    height: 120px;
     margin: auto;
     border: 1px solid;
+    border-radius: 2px;
+    display: inline-flex;
 }
+
+.center-details-veiculos {
+    margin: auto;
+}
+
+@media(max-width: 400px) {
+    mat-form-field{
+        width: 20%;
+        color: transparent;
+    }
+}
+
+h2 {
+    margin: 0px;
+}
+
 .descricao {
     width: 90%;
-    height: 50px;
     margin: auto;
     border: 1px solid;
-}
-.details-component {
-    padding-left: 20px;
+    border-radius: 2px;
+    text-align: left;
 }
 
 .outros-detalhes {
     text-align: center;
     display: flex;
 }
-.outros-detalhes-content{
+
+.outros-detalhes-content {
     padding-top: 10px;
     margin: auto;
 }
-.orcamento{
+
+
+
+
+
+.orcamento {
     width: 90%;
     height: 130px;
     margin: auto;

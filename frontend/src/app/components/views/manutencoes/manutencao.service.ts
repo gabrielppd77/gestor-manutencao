@@ -18,6 +18,11 @@ export class ManutencaoService {
     return this.http.get<Manutencao[]>(url);
   }
 
+  findAllConcludes(): Observable<Manutencao[]> {
+    const url = `${this.baseUrl}/manutencoes/concluidas`;
+    return this.http.get<Manutencao[]>(url);
+  }
+
   findById(id: String): Observable<Manutencao> {
     const url = `${this.baseUrl}/manutencoes/details/${id}`;
     return this.http.get<Manutencao>(url);

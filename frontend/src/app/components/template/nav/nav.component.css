@@ -9,11 +9,13 @@ i {
 
 .sidenav {
     background-color: rgb(255, 255, 255);
-    width: 20%;
 }
 
 @media(max-width: 740px) {
-    i {
-        font-size: 0%;
+    .sidenav {
+        width: 15%;
+    }
+    .title{
+        color: transparent;
     }
 }

@@ -1,0 +1,14 @@
+.content {
+    margin: auto;
+    width: 95%;
+    text-align: center;
+}
+
+h1{
+    padding-top: 20px;
+    text-align: center;
+}
+
+th.mat-header-cell {
+    text-align: center;
+}
