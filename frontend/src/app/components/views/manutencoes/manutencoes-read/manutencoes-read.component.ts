@@ -28,7 +28,7 @@ export class ManutencoesReadComponent implements OnInit {
     status: ''
   };
 
-  selectedVeiculo: Veiculo= {
+  veiculo: Veiculo= {
     id: 0,
     placa: '',
     km: 0,
@@ -39,9 +39,16 @@ export class ManutencoesReadComponent implements OnInit {
     tipo: ''
   };
 
+  listStatus: String[] = ['ANALISE', 'AFAZER', 'FAZENDO', 'AGUARDANDO', 'CONCLUIDA'];
+
+  listPrioridade: String[] = ['VERMELHO', 'LARANJA', 'AMARELO', 'AZULCLARO', 'VERDECLARO'];
+
+  datePrevisao = new Date();
+  dateInicio = new Date();
+
   veiculos: Veiculo[] = [];
 
-  constructor(private service: ManutencaoService, private route: ActivatedRoute, private serviceVeiculo: VeiculoService /*, private router: Router*/) { }
+  constructor(private service: ManutencaoService, private route: ActivatedRoute, private serviceVeiculo: VeiculoService , private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -49,14 +56,16 @@ export class ManutencoesReadComponent implements OnInit {
     this.findAllVeiculos();
   }
 
-  // return(): void {
-  //   this.router.navigate([`manutencoes`]);
-  // }
+  cancel(): void {
+    this.router.navigate([`manutencoes`]);
+  }
 
   findById(): void{
     this.service.findById(this.id!).subscribe(response => {
-      this.selectedVeiculo = response.veiculo;
+      this.veiculo = response.veiculo;
       this.manutencao = response;
+      this.datePrevisao = new Date(response.data_previsao);
+      this.dateInicio = new Date(response.data_criacao);
     })
   }
 
@@ -66,4 +75,33 @@ export class ManutencoesReadComponent implements OnInit {
     })
   }
 
+  changeColorPrioridade(prioridade: String): String{
+    switch (prioridade) {
+      case 'VERMELHO':
+        return 'rgb(255, 71, 71)';
+      case 'LARANJA':
+        return 'orange';
+      case 'AMARELO':
+        return 'rgb(255, 251, 9)';
+      case 'AZULCLARO':
+        return 'rgb(103, 103, 255)';
+      case 'VERDECLARO':
+        return 'greenyellow';
+      default:
+        break;
+    }
+  }
+
+  addZero(number: Number){
+    if(number <= 9){
+        return "0" + number;
+    } else {
+        return number
+    }
+  }
+
+  brokenDate(date: Date): String {
+      let dataFormatada = (this.addZero(date.getFullYear()) + "-" + this.addZero((date.getMonth() + 1)) + "-" + this.addZero(date.getDate()));
+      return dataFormatada;
+  }
 }

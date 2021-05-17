@@ -8,6 +8,7 @@
 
 .title {
     padding-top: .5rem;
+    margin-bottom: 2px;
 }
 
 .details-veiculo {
@@ -36,28 +37,54 @@ h2 {
 .descricao {
     width: 90%;
     margin: auto;
-    border: 1px solid;
     border-radius: 2px;
     text-align: left;
+    background-color: rgb(238, 238, 238);
 }
 
 .outros-detalhes {
-    text-align: center;
+    width: 90%;
+    margin: auto;
     display: flex;
 }
 
 .outros-detalhes-content {
     padding-top: 10px;
+    width: 40%;
     margin: auto;
 }
 
-
-
-
+mat-select{
+    border: .5px solid;
+    border-radius: 2px;
+}
 
 .orcamento {
     width: 90%;
-    height: 130px;
     margin: auto;
     border: 1px solid;
+    display: inline-flex;
+}
+
+p{
+    margin-bottom: 0px;
+}
+
+.alieng{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    width: 90%;
+    text-align: center;
+}
+
+button {
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px ;
+    text-align: center;
 }
