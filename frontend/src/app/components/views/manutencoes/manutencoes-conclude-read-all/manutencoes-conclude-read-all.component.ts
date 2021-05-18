@@ -9,10 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManutencoesConcludeReadAllComponent implements OnInit {
 
-  displayedColumns: string[] = ['placa', 'descricao', 'km_manutencao', 'data_finalizacao'];
-
   manutencoes: Manutencao [] = [];
-
+  
   constructor(private service: ManutencaoService) { }
 
   ngOnInit(): void {
@@ -22,7 +20,6 @@ export class ManutencoesConcludeReadAllComponent implements OnInit {
   findAllConclude() {
     this.service.findAllConcludes().subscribe(response => {
       this.manutencoes = response;
-      console.log(this.manutencoes);
     })
   }
 }

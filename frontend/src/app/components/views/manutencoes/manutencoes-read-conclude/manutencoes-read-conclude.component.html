@@ -1,0 +1,55 @@
+<div class="content">
+    <h1 class="title">Detalhes da manutenção concluída</h1>
+    <div class="details-veiculo">
+        <div class="center-details-veiculos">
+            <h2>Placa {{ veiculo.placa }}</h2>
+            <div>Modelo {{ veiculo.modelo }}</div>
+            <div>Fabricação {{ veiculo.fabricacao }} Ano {{ veiculo.ano }}</div>
+            <div>Tipo {{ veiculo.tipo }}</div>
+            <div>Chassi {{ veiculo.chassi }}</div>
+            <div>Km Atual {{ veiculo.km }}</div>
+        </div>
+    </div>
+    <p class="title">Descrição</p>
+    <textarea class="descricao" [value]="manutencao.descricao" disabled></textarea>
+    <div class="outros-detalhes">
+        <div class="outros-detalhes-content">
+            Data Finalização <input type="date" [value]="brokenDate(this.dateFim)" disabled>
+        </div>
+        <div class="outros-detalhes-content">Prioridade
+            <input type="text" [value]="manutencao.prioridade" [style.backgroundColor]="changeColorPrioridade(manutencao.prioridade)" disabled>
+        </div>
+    </div>
+    <div class="outros-detalhes">
+        <div class="outros-detalhes-content">
+            Data início <input type="date" [value]="brokenDate(this.dateInicio)" disabled>
+        </div>
+        <div class="outros-detalhes-content">
+            Previsão <input type="date" [value]="brokenDate(this.datePrevisao)" disabled>
+        </div>
+    </div>
+    <p class="title">Orçamento</p>
+    <div class="orcamento">
+        <div class="alieng">
+            Valor serviços
+            <p>
+                <input type="number" [value]="manutencao.valor_servico" disabled>
+            </p>
+            Valor peças
+            <p>
+                <input type="number" [value]="manutencao.valor_pecas" disabled>
+            </p>
+        </div>
+        <div class="alieng">
+            Valor total
+            <p>
+                <input type="number" [value]="manutencao.valor_pecas + manutencao.valor_servico" disabled>
+            </p>
+            Condição de pagamento
+            <p>
+                <textarea disabled>{{ manutencao.condicao_pagamento }}</textarea>
+            </p>
+        </div>
+    </div>
+    <button (click)="cancel()" mat-raised-button>Retornar</button>
+</div>

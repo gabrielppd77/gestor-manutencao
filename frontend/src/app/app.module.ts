@@ -30,6 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ManutencoesReadConcludeComponent } from './components/views/manutencoes/manutencoes-read-conclude/manutencoes-read-conclude.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     ManutencoesReadComponent,
     ManutencoesReadAllComponent,
     ManutencoesConcludeReadAllComponent,
-    VeiculosReadAllComponent
+    VeiculosReadAllComponent,
+    ManutencoesReadConcludeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
