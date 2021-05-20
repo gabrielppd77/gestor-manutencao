@@ -12,14 +12,14 @@
                 <div class="detail-item-title">Tipo</div>
             </div>
             <div>
-                <div><input class="detail-item" type="text" [value]= "veiculo.placa"></div>
-                <div><input class="detail-item" type="text" [value]="veiculo.modelo"></div>
-                <div><input class="detail-item" type="text" [value]="veiculo.chassi"></div>
-                <div><input class="detail-item" type="number" [value]= "veiculo.fabricacao"></div>
-                <div><input class="detail-item" type="number" [value]= "veiculo.ano"></div>
-                <div><input class="detail-item" type="number" [value]="veiculo.km"></div>
+                <div><input class="detail-item" type="text" [(ngModel)]="veiculo.placa" [value]= "veiculo.placa"></div>
+                <div><input class="detail-item" type="text" [(ngModel)]="veiculo.modelo" [value]="veiculo.modelo"></div>
+                <div><input class="detail-item" type="text" [(ngModel)]="veiculo.chassi" [value]="veiculo.chassi"></div>
+                <div><input class="detail-item" type="number" [(ngModel)]="veiculo.fabricacao" [value]= "veiculo.fabricacao"></div>
+                <div><input class="detail-item" type="number" [(ngModel)]="veiculo.ano" [value]= "veiculo.ano"></div>
+                <div><input class="detail-item" type="number" [(ngModel)]="veiculo.km" [value]="veiculo.km"></div>
                 <div>
-                    <select class="detail-item" [value]="veiculo.tipo">
+                    <select class="detail-item" [(ngModel)]="veiculo.tipo" [value]="veiculo.tipo">
                         <option *ngFor="let item of tipos">{{ item }}</option>
                     </select>
                 </div>
@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of veiculo.manutencoes" onmouseover="style.backgroundColor='rgb(235, 235, 235)'" onmouseout="style.backgroundColor='white'">
+                <tr (click)="irParaManutencao(item.id)" *ngFor="let item of veiculo.manutencoes" onmouseover="style.backgroundColor='rgb(235, 235, 235)'" onmouseout="style.backgroundColor='white'">
                     <td class="row-item">{{ item.descricao }}</td>
                     <td class="row-item">{{ item.km_manutencao }}</td>
                     <td class="row-item">{{ item.data_finalizacao | date: "dd/MM/yyyy"}}</td>
@@ -46,11 +46,11 @@
             </tbody>
         </table>
         <p>
-            <button mat-raised-button>Salvar</button>
+            <button (click)="update()" mat-raised-button>Salvar</button>
             <button (click)="cancel()" mat-raised-button>Cancelar</button>
         </p>
         <p>
-            <button mat-raised-button color="warn">Deletar veículo</button>
+            <button (click)="delete()" mat-raised-button color="warn">Deletar veículo</button>
         </p>
     </div>
 </div>

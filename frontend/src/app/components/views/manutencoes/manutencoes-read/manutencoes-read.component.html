@@ -30,8 +30,7 @@
         </div>
         <div class="outros-detalhes-content">Prioridade
             <mat-select [(ngModel)]="manutencao.prioridade" name="item" [style.backgroundColor]="changeColorPrioridade(manutencao.prioridade)">
-                <mat-option *ngFor="let item of listPrioridade" [value]="item">
-                    {{item}}
+                <mat-option *ngFor="let item of listPrioridade" [value]="item" [style.backgroundColor]="changeColorPrioridade(item)">
                 </mat-option>
             </mat-select>
         </div>

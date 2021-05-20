@@ -18,6 +18,7 @@ import { ManutencoesReadComponent } from './components/views/manutencoes/manuten
 
 import { VeiculosReadAllComponent } from './components/views/veiculos/veiculos-read-all/veiculos-read-all.component';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,6 +35,7 @@ import { ManutencoesReadConcludeComponent } from './components/views/manutencoes
 import { VeiculosReadComponent } from './components/views/veiculos/veiculos-read/veiculos-read.component';
 import { VeiculosCreateComponent } from './components/views/veiculos/veiculos-create/veiculos-create.component';
 import { ManutencoesCreateComponent } from './components/views/manutencoes/manutencoes-create/manutencoes-create.component';
+
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { ManutencoesCreateComponent } from './components/views/manutencoes/manut
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

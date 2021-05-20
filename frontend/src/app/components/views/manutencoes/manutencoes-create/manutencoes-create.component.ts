@@ -16,7 +16,7 @@ export class ManutencoesCreateComponent implements OnInit {
     placa: '',
     km: 0,
     modelo: '',
-    fabricacao: '',
+    fabricacao: 0,
     ano: 0,
     chassi: '',
     tipo: ''
@@ -26,14 +26,20 @@ export class ManutencoesCreateComponent implements OnInit {
 
   listPrioridade: String[] = ['VERMELHO', 'LARANJA', 'AMARELO', 'AZULCLARO', 'VERDECLARO'];
 
+  prioridadeSelect: String = '';
+
   veiculos: Veiculo[] = [];
+
+  dataInicial: Date = new Date();
+
+  valorServicos: number = 0;
+  valorPecas: number = 0;
 
   constructor(private service: ManutencaoService, private serviceVeiculo: VeiculoService , private router: Router) { }
 
   ngOnInit(): void {
     this.findAllVeiculos();
   }
-
 
   findAllVeiculos(): void {
     this.serviceVeiculo.findAll().subscribe(response => {
@@ -60,5 +66,18 @@ export class ManutencoesCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate([`manutencoes`]);
+  }
+
+  addZero(number: Number){
+    if(number <= 9){
+        return "0" + number;
+    } else {
+        return number
+    }
+  }
+
+  brokenDate(date: Date): String {
+      let dataFormatada = (this.addZero(date.getFullYear()) + "-" + this.addZero((date.getMonth() + 1)) + "-" + this.addZero(date.getDate()));
+      return dataFormatada;
   }
 }

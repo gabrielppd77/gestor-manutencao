@@ -32,7 +32,7 @@ export class ManutencoesReadConcludeComponent implements OnInit {
     placa: '',
     km: 0,
     modelo: '',
-    fabricacao: '',
+    fabricacao: 0,
     ano: 0,
     chassi: '',
     tipo: ''

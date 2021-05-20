@@ -29,16 +29,15 @@
             </mat-select>
         </div>
         <div class="outros-detalhes-content">Prioridade
-            <mat-select name="item" [style.backgroundColor]="">
-                <mat-option *ngFor="let item of listPrioridade" [value]="item">
-                    {{item}}
+            <mat-select name="item" [(ngModel)]="prioridadeSelect" [style.backgroundColor]="changeColorPrioridade(prioridadeSelect)">
+                <mat-option *ngFor="let item of listPrioridade" [value]="item" [style.backgroundColor]="changeColorPrioridade(item)">
                 </mat-option>
             </mat-select>
         </div>
     </div>
     <div class="outros-detalhes">
         <div class="outros-detalhes-content">
-            Data início <input type="date" [value]="" disabled>
+            Data início <input type="date" [value]="brokenDate(dataInicial)" disabled>
         </div>
         <div class="outros-detalhes-content">
             Previsão <input type="date" [value]="">
@@ -49,17 +48,17 @@
         <div class="alieng">
             Valor serviços
             <p>
-                <input type="number">
+                <input type="number" [(ngModel)]="valorServicos">
             </p>
             Valor peças
             <p>
-                <input type="number">
+                <input type="number" [(ngModel)]="valorPecas">
             </p>
         </div>
         <div class="alieng">
             Valor total
             <p>
-                <input type="number" disabled>
+                <input type="number" [(ngModel)]="valorServicos + valorPecas" disabled>
             </p>
             Condição de pagamento
             <p>
@@ -68,11 +67,7 @@
         </div>
     </div>
     <p>
-        <button mat-raised-button>Salvar</button>
-        <button (click)="cancel()" mat-raised-button>Cancelar</button>
-    </p>
-    <p>
-        <button mat-raised-button color="primary">Concluir manutenção</button>
-        <button mat-raised-button color="warn">Deletar manutenção</button>
+        <button mat-raised-button color="primary">Criar manutenção</button>
+        <button (click)="cancel()" mat-raised-button color="warn">Cancelar</button>
     </p>
 </div>

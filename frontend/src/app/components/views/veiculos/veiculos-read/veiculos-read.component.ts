@@ -18,7 +18,7 @@ export class VeiculosReadComponent implements OnInit {
     placa: '',
     km: 0,
     modelo: '',
-    fabricacao: '',
+    fabricacao: 0,
     ano: 0,
     chassi: '',
     tipo: ''
@@ -49,8 +49,30 @@ export class VeiculosReadComponent implements OnInit {
     })
   }
 
+  irParaManutencao(id: string): void{
+    this.router.navigate([`manutencoes/concluidas/details/${id}`]);
+  }
+
   contarManutencoes(): number{
     return this.manutencoes.length;
+  }
+
+  update(): void {
+    this.service.update(this.veiculo).subscribe((response) => {
+      this.router.navigate(['veiculos'])
+      this.service.mensagem('Veículo atualizado com sucesso!')
+    }, err => {
+      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+    })
+  }
+
+  delete(): void {
+    this.service.delete(this.veiculo.id.toString()!).subscribe(response => {
+      this.router.navigate(['veiculos'])
+      this.service.mensagem('Veículo deletado com sucesso!')
+    }, err => {
+      this.service.mensagem('Veículo possuí associações com uma ou mais manutenções ' + err.error.error)
+    })
   }
 
   cancel(): void {

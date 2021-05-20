@@ -6,7 +6,7 @@ export interface Veiculo {
     km: number;
 
     modelo: string;
-    fabricacao: string;
+    fabricacao: number;
     ano: number;
     chassi: string;
 
