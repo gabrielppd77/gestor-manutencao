@@ -13,7 +13,7 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 
 import { ManutencoesReadAllComponent } from './components/views/manutencoes/manutencoes-read-all/manutencoes-read-all.component';
-import { ManutencoesConcludeReadAllComponent } from './components/views/manutencoes/manutencoes-conclude-read-all/manutencoes-conclude-read-all.component';
+import { ManutencoesConcludeReadAllComponent } from './components/views/manutencoes/manuntecoes-conclude/manutencoes-conclude-read-all/manutencoes-conclude-read-all.component';
 import { ManutencoesReadComponent } from './components/views/manutencoes/manutencoes-read/manutencoes-read.component';
 
 import { VeiculosReadAllComponent } from './components/views/veiculos/veiculos-read-all/veiculos-read-all.component';
@@ -30,7 +30,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import { ManutencoesReadConcludeComponent } from './components/views/manutencoes/manutencoes-read-conclude/manutencoes-read-conclude.component';
+import { ManutencoesReadConcludeComponent } from './components/views/manutencoes/manuntecoes-conclude/manutencoes-read-conclude/manutencoes-read-conclude.component';
+import { VeiculosReadComponent } from './components/views/veiculos/veiculos-read/veiculos-read.component';
+import { VeiculosCreateComponent } from './components/views/veiculos/veiculos-create/veiculos-create.component';
+import { ManutencoesCreateComponent } from './components/views/manutencoes/manutencoes-create/manutencoes-create.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { ManutencoesReadConcludeComponent } from './components/views/manutencoes
     ManutencoesReadAllComponent,
     ManutencoesConcludeReadAllComponent,
     VeiculosReadAllComponent,
-    ManutencoesReadConcludeComponent
+    ManutencoesReadConcludeComponent,
+    VeiculosReadComponent,
+    VeiculosCreateComponent,
+    ManutencoesCreateComponent
   ],
   imports: [
     BrowserModule,

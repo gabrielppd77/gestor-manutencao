@@ -1,4 +1,5 @@
 <div class="content">
+    <button class="button" routerLink="insert" mat-raised-button color="primary">Criar manutenção</button>
     <h1>Fazendo</h1>
     <mat-list *ngFor="let item of manutencoesFazendo">
             <mat-card routerLink = "details/{{ item.id }}" onmouseover="style.backgroundColor='rgb(235, 235, 235)'" onmouseout="style.backgroundColor='white'">

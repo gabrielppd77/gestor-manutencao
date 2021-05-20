@@ -39,7 +39,7 @@ export class ManutencoesReadComponent implements OnInit {
     tipo: ''
   };
 
-  listStatus: String[] = ['ANALISE', 'AFAZER', 'FAZENDO', 'AGUARDANDO', 'CONCLUIDA'];
+  listStatus: String[] = ['ANALISE', 'AFAZER', 'FAZENDO', 'AGUARDANDO'];
 
   listPrioridade: String[] = ['VERMELHO', 'LARANJA', 'AMARELO', 'AZULCLARO', 'VERDECLARO'];
 

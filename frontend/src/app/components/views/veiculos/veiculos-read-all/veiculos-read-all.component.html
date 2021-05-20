@@ -1,1 +1,28 @@
-<p>veiculos-read-all works!</p>
+<div class="content">
+  <div class="div-h1">
+    <button class="button" routerLink="insert" mat-raised-button color="primary">Criar veículo</button>
+    <h1 class="title">Manutenções concluídas</h1>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Tipo</th>
+        <th>Modelo</th>
+        <th>Ano/Fabricação</th>
+        <th>KM Atual</th>
+        <th>Manutenções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr routerLink="details/{{ item.id }}" onmouseover="style.backgroundColor='rgb(235, 235, 235)'" onmouseout="style.backgroundColor='white'" *ngFor="let item of veiculos">
+        <td class="row-item">{{ item.placa }}</td>
+        <td class="row-item">{{ item.tipo }}</td>
+        <td class="row-item">{{ item.modelo }}</td>
+        <td class="row-item">{{ item.ano }} {{ item.fabricacao }}</td>
+        <td class="row-item">{{ item.km }}</td>
+        <td class="row-item">{{ contarManutencoes(item) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 

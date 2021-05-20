@@ -1,0 +1,75 @@
+.content {
+    width: 98%;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.title {
+    margin-bottom: 0px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.details-veiculo {
+    text-align: center;
+    border: .5px solid;
+    width: 80%;
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.content-detail-veiculo {
+    display: inline-flex;
+    margin: 10px auto 5px;
+}
+
+.detail-item-title {
+    padding-top: 10%;
+}
+
+.detail-item {
+    margin-top: 5px;
+    text-align: center;
+    width: 90%;
+}
+
+.contar-manutencoes {
+    width: 90%;
+    margin: auto;
+    display: inline-flex;
+}
+
+.contar-manutencoes-init {
+    margin-right: auto;
+}
+
+.contar-manutencoes-end {
+    margin-left: auto;
+}
+
+table {
+    border-spacing: 0px;
+    width: 90%;
+    margin: auto;
+    border: .5px solid;
+}
+
+thead{
+    background-color: rgb(91, 158, 235);
+}
+
+.row-item {
+    border-bottom: .5px solid rgb(207, 207, 207);
+    text-align: center;
+    padding: 5px;
+}
+
+button {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+

@@ -1,5 +1,5 @@
-import { Manutencao } from './../manutencao.model';
-import { ManutencaoService } from './../manutencao.service';
+import { Manutencao } from '../../manutencao.model';
+import { ManutencaoService } from '../../manutencao.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

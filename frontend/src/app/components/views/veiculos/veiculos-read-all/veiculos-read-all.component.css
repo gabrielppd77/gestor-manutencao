@@ -1,0 +1,42 @@
+.content {
+    width: 98%;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 5px;
+}
+h1{
+    margin-bottom: 0px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.div-h1 {
+    margin: auto;
+    display: inline-flex;
+    width: 90%;
+}
+
+.button {
+    margin: 1.1%;
+}
+
+.title {
+    margin: auto;
+}
+
+table {
+    border-spacing: 0px;
+    width: 98%;
+    margin: auto;
+    border-radius: 2px;
+}
+
+thead{
+    background-color: rgb(91, 158, 235);
+    border-radius: 50px;
+}
+.row-item {
+    border-bottom: .5px solid rgb(207, 207, 207);
+    text-align: center;
+    padding: 9px;
+}

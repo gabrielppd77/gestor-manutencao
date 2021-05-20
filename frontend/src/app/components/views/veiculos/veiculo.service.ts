@@ -17,4 +17,9 @@ export class VeiculoService {
     const url = `${this.baseUrl}/veiculos`;
     return this.http.get<Veiculo[]>(url);
   }
+
+  findById(id: String): Observable<Veiculo> {
+    const url = `${this.baseUrl}/veiculos/details/${id}`;
+    return this.http.get<Veiculo>(url);
+  }
 }

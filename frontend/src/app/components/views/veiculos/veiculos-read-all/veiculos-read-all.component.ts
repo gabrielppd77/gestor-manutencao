@@ -1,3 +1,5 @@
+import { Veiculo } from './../veiculo.model';
+import { VeiculoService } from './../veiculo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VeiculosReadAllComponent implements OnInit {
 
-  constructor() { }
+  veiculos: Veiculo[] = [];
+
+  constructor(private service: VeiculoService) { }
 
   ngOnInit(): void {
+    this.findAll();
   }
 
+  findAll(){
+    this.service.findAll().subscribe(response => {
+      this.veiculos = response;
+    })
+  }
+
+  contarManutencoes(veiculo: Veiculo): number{
+    return veiculo.manutencoes.length;
+  }
 }

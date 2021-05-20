@@ -1,0 +1,56 @@
+<div class="content">
+    <h1 class="title">Detalhes veículo</h1>
+    <div class="details-veiculo">
+        <div class="content-detail-veiculo">
+            <div>
+                <div class="detail-item-title">Placa</div>
+                <div class="detail-item-title">Modelo</div>
+                <div class="detail-item-title">Chassi</div>
+                <div class="detail-item-title">Fabricação</div>
+                <div class="detail-item-title">Ano</div>
+                <div class="detail-item-title">Km Atual</div>
+                <div class="detail-item-title">Tipo</div>
+            </div>
+            <div>
+                <div><input class="detail-item" type="text" [value]= "veiculo.placa"></div>
+                <div><input class="detail-item" type="text" [value]="veiculo.modelo"></div>
+                <div><input class="detail-item" type="text" [value]="veiculo.chassi"></div>
+                <div><input class="detail-item" type="number" [value]= "veiculo.fabricacao"></div>
+                <div><input class="detail-item" type="number" [value]= "veiculo.ano"></div>
+                <div><input class="detail-item" type="number" [value]="veiculo.km"></div>
+                <div>
+                    <select class="detail-item" [value]="veiculo.tipo">
+                        <option *ngFor="let item of tipos">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="contar-manutencoes">
+            <div class="contar-manutencoes-init">Manutenções</div>
+            <div class="contar-manutencoes-end">{{ contarManutencoes() }}</div>
+        </div>
+        <table>
+            <thead >
+                <tr>
+                    <th>Descrição</th>
+                    <th>KM</th>
+                    <th>Finalizada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of veiculo.manutencoes" onmouseover="style.backgroundColor='rgb(235, 235, 235)'" onmouseout="style.backgroundColor='white'">
+                    <td class="row-item">{{ item.descricao }}</td>
+                    <td class="row-item">{{ item.km_manutencao }}</td>
+                    <td class="row-item">{{ item.data_finalizacao | date: "dd/MM/yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <button mat-raised-button>Salvar</button>
+            <button (click)="cancel()" mat-raised-button>Cancelar</button>
+        </p>
+        <p>
+            <button mat-raised-button color="warn">Deletar veículo</button>
+        </p>
+    </div>
+</div>

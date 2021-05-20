@@ -1,0 +1,31 @@
+<div class="content">
+    <h1 class="title">Criar veículo</h1>
+    <div class="content-detail-veiculo">
+        <div>
+            <div class="detail-item-title">Placa</div>
+            <div class="detail-item-title">Modelo</div>
+            <div class="detail-item-title">Chassi</div>
+            <div class="detail-item-title">Fabricação</div>
+            <div class="detail-item-title">Ano</div>
+            <div class="detail-item-title">Km</div>
+            <div class="detail-item-title">Tipo</div>
+        </div>
+        <div>
+            <div><input class="detail-item" type="text"></div>
+            <div><input class="detail-item" type="text"></div>
+            <div><input class="detail-item" type="text"></div>
+            <div><input class="detail-item" type="number"></div>
+            <div><input class="detail-item" type="number"></div>
+            <div><input class="detail-item" type="number"></div>
+            <div>
+                <select class="detail-item">
+                    <option *ngFor="let item of tipos">{{ item }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <p>
+        <button mat-raised-button color="primary">Concluir</button>
+        <button (click)="cancel()" mat-raised-button color="warn">Cancelar</button>
+    </p>
+</div>

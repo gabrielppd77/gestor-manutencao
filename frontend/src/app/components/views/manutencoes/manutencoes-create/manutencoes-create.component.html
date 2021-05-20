@@ -1,5 +1,5 @@
 <div class="content">
-    <h1 class="title">Detalhes da Manutenção</h1>
+    <h1 class="title">Criar Manutenção</h1>
     <div class="details-veiculo">
         <div class="center-details-veiculos">
             <h2>Placa {{ veiculo.placa }}</h2>
@@ -19,17 +19,17 @@
         </div>
     </div>
     <p class="title">Descrição</p>
-    <textarea class="descricao" [value]="manutencao.descricao"></textarea>
+    <textarea class="descricao" [value]=""></textarea>
     <div class="outros-detalhes">
         <div class="outros-detalhes-content">Status
-            <mat-select [(ngModel)]="manutencao.status" name="item">
+            <mat-select name="item">
                 <mat-option *ngFor="let item of listStatus" [value]="item">
                     {{item}}
                 </mat-option>
             </mat-select>
         </div>
         <div class="outros-detalhes-content">Prioridade
-            <mat-select [(ngModel)]="manutencao.prioridade" name="item" [style.backgroundColor]="changeColorPrioridade(manutencao.prioridade)">
+            <mat-select name="item" [style.backgroundColor]="">
                 <mat-option *ngFor="let item of listPrioridade" [value]="item">
                     {{item}}
                 </mat-option>
@@ -38,10 +38,10 @@
     </div>
     <div class="outros-detalhes">
         <div class="outros-detalhes-content">
-            Data início <input type="date" [value]="brokenDate(this.dateInicio)" disabled>
+            Data início <input type="date" [value]="" disabled>
         </div>
         <div class="outros-detalhes-content">
-            Previsão <input type="date" [value]="brokenDate(this.datePrevisao)">
+            Previsão <input type="date" [value]="">
         </div>
     </div>
     <p class="title">Orçamento</p>
@@ -49,21 +49,21 @@
         <div class="alieng">
             Valor serviços
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_servico">
+                <input type="number">
             </p>
             Valor peças
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_pecas">
+                <input type="number">
             </p>
         </div>
         <div class="alieng">
             Valor total
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_pecas + manutencao.valor_servico" disabled>
+                <input type="number" disabled>
             </p>
             Condição de pagamento
             <p>
-                <textarea name="" id="" cols="0" rows="0">{{ manutencao.condicao_pagamento }}</textarea>
+                <textarea name="" id="" cols="0" rows="0"></textarea>
             </p>
         </div>
     </div>
