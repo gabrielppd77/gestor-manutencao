@@ -17,9 +17,6 @@ export class ManutencoesReadComponent implements OnInit {
   manutencao: Manutencao = {
     id: 0,
     descricao: '',
-    km_manutencao: 0,
-    data_criacao: '',
-    data_finalizacao: '',
     data_previsao: '',
     condicao_pagamento: '',
     valor_pecas: 0,
@@ -45,6 +42,8 @@ export class ManutencoesReadComponent implements OnInit {
 
   datePrevisao = new Date();
   dateInicio = new Date();
+  dataAtualizada: string;
+  complementoData: string = "T10:00:00Z";
 
   veiculos: Veiculo[] = [];
 
@@ -54,10 +53,6 @@ export class ManutencoesReadComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.findById();
     this.findAllVeiculos();
-  }
-
-  cancel(): void {
-    this.router.navigate([`manutencoes`]);
   }
 
   findById(): void{
@@ -73,6 +68,24 @@ export class ManutencoesReadComponent implements OnInit {
     this.serviceVeiculo.findAll().subscribe(response => {
       this.veiculos = response;
     })
+  }
+
+  update(): void{
+    if(this.dataAtualizada!= null){
+      this.manutencao.data_previsao = this.dataAtualizada + this.complementoData;
+    }else {
+      this.manutencao.data_previsao = this.brokenDate(this.datePrevisao) + this.complementoData;
+    }
+    this.service.update(this.manutencao).subscribe(response => {
+      this.router.navigate(['manutencoes']);
+      this.service.mensagem('Manutenção atualizada com sucesso');
+    }, err => {
+      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+    })
+  }
+  
+  cancel(): void {
+    this.router.navigate([`manutencoes`]);
   }
 
   changeColorPrioridade(prioridade: String): String{
@@ -100,7 +113,7 @@ export class ManutencoesReadComponent implements OnInit {
     }
   }
 
-  brokenDate(date: Date): String {
+  brokenDate(date: Date): string {
       let dataFormatada = (this.addZero(date.getFullYear()) + "-" + this.addZero((date.getMonth() + 1)) + "-" + this.addZero(date.getDate()));
       return dataFormatada;
   }

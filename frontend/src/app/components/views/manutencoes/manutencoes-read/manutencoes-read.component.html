@@ -11,7 +11,7 @@
         </div>
         <div class="center-details-veiculos">
             <mat-label>Selecione um veículo</mat-label>
-            <mat-select [(ngModel)]="veiculo" name="item">
+            <mat-select [(ngModel)]="veiculo" [(ngModel)]="manutencao.veiculo" name="item">
                 <mat-option *ngFor="let item of veiculos" [value]="item">
                     {{item.placa}}
                 </mat-option>
@@ -19,16 +19,18 @@
         </div>
     </div>
     <p class="title">Descrição</p>
-    <textarea class="descricao" [value]="manutencao.descricao"></textarea>
+    <textarea class="descricao" [(ngModel)]="manutencao.descricao"></textarea>
     <div class="outros-detalhes">
-        <div class="outros-detalhes-content">Status
+        <div class="outros-detalhes-content">
+            Status
             <mat-select [(ngModel)]="manutencao.status" name="item">
                 <mat-option *ngFor="let item of listStatus" [value]="item">
                     {{item}}
                 </mat-option>
             </mat-select>
         </div>
-        <div class="outros-detalhes-content">Prioridade
+        <div class="outros-detalhes-content">
+            Prioridade
             <mat-select [(ngModel)]="manutencao.prioridade" name="item" [style.backgroundColor]="changeColorPrioridade(manutencao.prioridade)">
                 <mat-option *ngFor="let item of listPrioridade" [value]="item" [style.backgroundColor]="changeColorPrioridade(item)">
                 </mat-option>
@@ -40,7 +42,7 @@
             Data início <input type="date" [value]="brokenDate(this.dateInicio)" disabled>
         </div>
         <div class="outros-detalhes-content">
-            Previsão <input type="date" [value]="brokenDate(this.datePrevisao)">
+            Previsão <input type="date" [(ngModel)]="dataAtualizada" [value]="brokenDate(this.datePrevisao)">
         </div>
     </div>
     <p class="title">Orçamento</p>
@@ -62,12 +64,12 @@
             </p>
             Condição de pagamento
             <p>
-                <textarea name="" id="" cols="0" rows="0">{{ manutencao.condicao_pagamento }}</textarea>
+                <textarea [(ngModel)]="manutencao.condicao_pagamento"></textarea>
             </p>
         </div>
     </div>
     <p>
-        <button mat-raised-button>Salvar</button>
+        <button (click)="update()" mat-raised-button>Salvar</button>
         <button (click)="cancel()" mat-raised-button>Cancelar</button>
     </p>
     <p>

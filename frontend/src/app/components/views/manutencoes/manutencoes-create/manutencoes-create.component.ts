@@ -1,7 +1,8 @@
+import { Veiculo } from './../../veiculos/veiculo.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Veiculo } from '../../veiculos/veiculo.model';
 import { VeiculoService } from '../../veiculos/veiculo.service';
+import { Manutencao } from '../manutencao.model';
 import { ManutencaoService } from '../manutencao.service';
 
 @Component({
@@ -22,18 +23,28 @@ export class ManutencoesCreateComponent implements OnInit {
     tipo: ''
   };
 
+  manutencao: Manutencao = {
+    descricao: '',
+    data_previsao: '',
+    veiculo: this.veiculo,
+    condicao_pagamento: '',
+    valor_pecas: 0,
+    valor_servico: 0,
+    prioridade: '',
+    status: ''
+  };
+
   listStatus: String[] = ['ANALISE', 'AFAZER', 'FAZENDO', 'AGUARDANDO'];
 
   listPrioridade: String[] = ['VERMELHO', 'LARANJA', 'AMARELO', 'AZULCLARO', 'VERDECLARO'];
 
   prioridadeSelect: String = '';
 
-  veiculos: Veiculo[] = [];
+  complementoData: string = "T10:00:00Z";
 
   dataInicial: Date = new Date();
 
-  valorServicos: number = 0;
-  valorPecas: number = 0;
+  veiculos: Veiculo[] = [];
 
   constructor(private service: ManutencaoService, private serviceVeiculo: VeiculoService , private router: Router) { }
 
@@ -45,6 +56,22 @@ export class ManutencoesCreateComponent implements OnInit {
     this.serviceVeiculo.findAll().subscribe(response => {
       this.veiculos = response;
     })
+  }
+
+  create(): void {
+    this.manutencao.data_previsao = this.manutencao.data_previsao + this.complementoData;
+    this.service.create(this.manutencao).subscribe((response) => {
+      this.router.navigate(['manutencoes']);
+      this.service.mensagem('Manutenção criada com Sucesso!');
+    }, err => {
+      for(let i = 0; i < err.error.errors.length; i++){
+        this.service.mensagem(err.error.errors[i].message)
+      }
+    })
+  }
+
+  cancel(): void {
+    this.router.navigate([`manutencoes`]);
   }
 
   changeColorPrioridade(prioridade: String): String{
@@ -64,10 +91,6 @@ export class ManutencoesCreateComponent implements OnInit {
     }
   }
 
-  cancel(): void {
-    this.router.navigate([`manutencoes`]);
-  }
-
   addZero(number: Number){
     if(number <= 9){
         return "0" + number;
@@ -75,7 +98,7 @@ export class ManutencoesCreateComponent implements OnInit {
         return number
     }
   }
-
+  
   brokenDate(date: Date): String {
       let dataFormatada = (this.addZero(date.getFullYear()) + "-" + this.addZero((date.getMonth() + 1)) + "-" + this.addZero(date.getDate()));
       return dataFormatada;
