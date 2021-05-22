@@ -63,6 +63,15 @@ export class ManutencoesReadConcludeComponent implements OnInit {
     this.router.navigate([`manutencoes/concluidas`]);
   }
 
+  delete(): void {
+    this.service.delete(this.manutencao.id).subscribe(response => {
+      this.router.navigate([`manutencoes/concluidas`])
+      this.service.mensagem('Manutenção deletada com sucesso.')
+    }, err => {
+      this.service.mensagem(err.error.error)
+    })
+  }
+
   changeColorPrioridade(prioridade: String): String{
     switch (prioridade) {
       case 'VERMELHO':

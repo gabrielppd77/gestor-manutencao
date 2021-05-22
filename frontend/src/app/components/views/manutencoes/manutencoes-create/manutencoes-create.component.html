@@ -50,11 +50,11 @@
         <div class="alieng">
             Valor serviços
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_servico">
+                <input type="number" min="0" [(ngModel)]="manutencao.valor_servico">
             </p>
             Valor peças
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_pecas">
+                <input type="number" min="0" [(ngModel)]="manutencao.valor_pecas">
             </p>
         </div>
         <div class="alieng">

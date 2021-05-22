@@ -39,6 +39,16 @@ export class ManutencaoService {
     return this.http.put<void>(url, manutencao);
   }
 
+  delete(id: number): Observable<void> {
+    const url = `${this.baseUrl}/manutencoes/delete/${id}`
+    return this.http.delete<void>(url);
+  }
+
+  conclude(manutencao: Manutencao): Observable<void> {
+    const url = `${this.baseUrl}/manutencoes/concluir/${manutencao.id}`
+    return this.http.put<void>(url, manutencao);
+  }
+
   mensagem(str: String): void {
     this._snack.open(`${str}`, "OK", {
       horizontalPosition: 'end',

@@ -7,7 +7,7 @@
             <div>Fabricação {{ veiculo.fabricacao }} Ano {{ veiculo.ano }}</div>
             <div>Tipo {{ veiculo.tipo }}</div>
             <div>Chassi {{ veiculo.chassi }}</div>
-            <div>Km Atual {{ veiculo.km }}</div>
+            <div>Km da manutenção {{ manutencao.km_manutencao }}</div>
         </div>
     </div>
     <p class="title">Descrição</p>
@@ -52,4 +52,5 @@
         </div>
     </div>
     <button (click)="cancel()" mat-raised-button>Retornar</button>
+    <button (click)="delete()" mat-raised-button color="warn">Deletar Manutenção</button>
 </div>

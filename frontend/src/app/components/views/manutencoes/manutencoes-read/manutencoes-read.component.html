@@ -50,11 +50,11 @@
         <div class="alieng">
             Valor serviços
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_servico">
+                <input type="number" min="0" [(ngModel)]="manutencao.valor_servico">
             </p>
             Valor peças
             <p>
-                <input type="number" [(ngModel)]="manutencao.valor_pecas">
+                <input type="number" min="0" [(ngModel)]="manutencao.valor_pecas">
             </p>
         </div>
         <div class="alieng">
@@ -73,7 +73,7 @@
         <button (click)="cancel()" mat-raised-button>Cancelar</button>
     </p>
     <p>
-        <button mat-raised-button color="primary">Concluir manutenção</button>
-        <button mat-raised-button color="warn">Deletar manutenção</button>
+        <button (click)="conclude()" mat-raised-button color="primary">Concluir manutenção</button>
+        <button (click)="delete()" mat-raised-button color="warn">Deletar manutenção</button>
     </p>
 </div>

@@ -14,9 +14,9 @@
             <div><input class="detail-item" type="text" [(ngModel)]="veiculo.placa"></div>
             <div><input class="detail-item" type="text" [(ngModel)]="veiculo.modelo"></div>
             <div><input class="detail-item" type="text" [(ngModel)]="veiculo.chassi"></div>
-            <div><input class="detail-item" type="number" [(ngModel)]="veiculo.fabricacao"></div>
-            <div><input class="detail-item" type="number" [(ngModel)]="veiculo.ano"></div>
-            <div><input class="detail-item" type="number" [(ngModel)]="veiculo.km"></div>
+            <div><input class="detail-item" type="number" min="0" [(ngModel)]="veiculo.fabricacao"></div>
+            <div><input class="detail-item" type="number" min="0" [(ngModel)]="veiculo.ano"></div>
+            <div><input class="detail-item" type="number" min="0" [(ngModel)]="veiculo.km"></div>
             <div>
                 <select class="detail-item" [(ngModel)]="veiculo.tipo">
                     <option *ngFor="let item of tipos">{{ item }}</option>

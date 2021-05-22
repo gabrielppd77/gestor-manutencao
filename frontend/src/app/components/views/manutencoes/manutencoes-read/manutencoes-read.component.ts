@@ -83,6 +83,29 @@ export class ManutencoesReadComponent implements OnInit {
       this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
     })
   }
+
+  delete(): void {
+    this.service.delete(this.manutencao.id).subscribe(response => {
+      this.router.navigate([`manutencoes`])
+      this.service.mensagem('Manutenção deletada com sucesso.');
+    }, err => {
+      this.service.mensagem(err.error.error)
+    })
+  }
+
+  conclude(): void {
+    if(this.dataAtualizada!= null){
+      this.manutencao.data_previsao = this.dataAtualizada + this.complementoData;
+    }else {
+      this.manutencao.data_previsao = this.brokenDate(this.datePrevisao) + this.complementoData;
+    }
+    this.service.conclude(this.manutencao).subscribe(response => {
+      this.router.navigate(['manutencoes']);
+      this.service.mensagem('Manutenção concluída com sucesso');
+    }, err => {
+      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+    })
+  }
   
   cancel(): void {
     this.router.navigate([`manutencoes`]);
