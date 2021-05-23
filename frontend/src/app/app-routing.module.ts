@@ -35,8 +35,6 @@ const routes: Routes = [
     component: ManutencoesCreateComponent
   },
 
-
-
   {
     path: 'manutencoes/concluidas',
     component: ManutencoesConcludeReadAllComponent
@@ -45,9 +43,6 @@ const routes: Routes = [
     path: 'manutencoes/concluidas/details/:id',
     component: ManutencoesReadConcludeComponent
   },
-
-
-
 
   {
     path: 'veiculos',
