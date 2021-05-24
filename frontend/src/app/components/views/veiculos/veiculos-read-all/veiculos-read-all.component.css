@@ -40,3 +40,14 @@ thead{
     text-align: center;
     padding: 9px;
 }
+
+@media(max-width: 840px) {
+    .row-item {
+        font-size: 7px;
+        padding: 0px;
+    }
+    th {
+        font-size: 9px;
+        padding: 0px;
+    }
+}

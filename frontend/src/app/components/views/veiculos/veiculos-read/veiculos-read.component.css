@@ -71,6 +71,15 @@ button {
     margin-right: 20px;
 }
 
+@media(max-width: 840px) {
+    .row-item {
+        font-size: 13px;
+        padding: 2px;
+    }
+    th {
+        font-size: 12px;
+    }
+}
 
 
 
